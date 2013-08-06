@@ -12,10 +12,12 @@ Until now.  But only in 3.3+.  Which is not all that helpful to some of us.
 
 This module clumsily exposes the same type to previous versions of Python.
 
-.. PEP416_: http://www.python.org/dev/peps/pep-0416/
+.. _PEP416: http://www.python.org/dev/peps/pep-0416/
 
 Usage
 -----
+
+::
 
     from dictproxyhack import dictproxy
 
@@ -24,7 +26,7 @@ Usage
     myproxy['baz'] = "quux"  # TypeError
 
 Since the proxy holds a reference to the underlying ``dict`` (but doesn't provide
-any way to get it back), you can trivially implement ``frozendict``:
+any way to get it back), you can trivially implement ``frozendict``::
 
     def frozendict(*args, **kwargs):
         return dictproxy(dict(*args, **kwargs))
