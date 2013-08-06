@@ -42,7 +42,7 @@ Python.  Should work anywhere.  Maybe.
 On **Python 3.3+**, you get the real ``mappingproxy`` type, which lives in the
 ``types`` module as ``MappingProxyType``.
 
-On **CPython 2.2+**, you get a fake class that forcibly instantiates
+On **CPython 2.5+**, you get a fake class that forcibly instantiates
 ``dictproxy`` objects via ``ctypes`` shenanigans.
 
 On **nearly anything else**, you get a regular class that wraps a dict and

@@ -1,5 +1,5 @@
 """Exposes the immutable `dictproxy` type to all (?) versions of Python.
-Should work in 2.2+, 3.0+.  Actually tried on 2.6, 2.7, 3.2, 3.3, and PyPy 2.1.
+Should work in 2.3+, 3.0+.  Actually tried on 2.6, 2.7, 3.2, 3.3, and PyPy 2.1.
 
 Usage is easy:
 
