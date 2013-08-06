@@ -10,9 +10,9 @@ Usage is easy:
 
 dictproxy is GvR's answer to the desire for a "frozendict" type; see the
 PEP at http://www.python.org/dev/peps/pep-0416/#rejection-notice.  It's the
-type of `__dict__` attributes, and it exposes a read-only view of an
-existing dict.  Changes to the original dict are visible through the proxy,
-but the proxy itself cannot be changed in any way.
+type of immutable `__dict__` attributes, and it exposes a read-only view of an
+existing dict.  Changes to the original dict are visible through the proxy, but
+the proxy itself cannot be changed in any way.
 
 dictproxy has been publicly exposed in Python 3.3 as `types.MappingProxyType`.
 It already exists in earlier versions of Python, back to the dark days of 2.2,

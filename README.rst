@@ -4,9 +4,10 @@ dictproxyhack
 Exposes the immutable ``dictproxy`` type to all (?) versions of Python.
 
 PEP416_ asked for a ``frozendict`` type, but was rejected.  The alternative was
-to publicly expose ``dictproxy``, the type used for ``obj.__dict__``, which
-wraps an existing dict and provides a read-only interface to it.  The type has
-existed since 2.2, but it's never had a Python-land constructor.
+to publicly expose ``dictproxy``, the type used for and immutable object's
+``__dict__``, which wraps an existing dict and provides a read-only interface
+to it.  The type has existed since 2.2, but it's never had a Python-land
+constructor.
 
 Until now.  But only in 3.3+.  Which is not all that helpful to some of us.
 
