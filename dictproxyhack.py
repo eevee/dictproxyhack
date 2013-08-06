@@ -74,11 +74,10 @@ def _get_from_c_api():
     ctypes.
     """
     from ctypes import pythonapi, py_object
-    from _ctypes import PyObj_FromPtr
 
     PyDictProxy_New = pythonapi.PyDictProxy_New
     PyDictProxy_New.argtypes = (py_object,)
-    PyDictProxy_New.rettype = py_object
+    PyDictProxy_New.restype = py_object
 
     # To actually create new dictproxy instances, we need a class that calls
     # the above C API functions, but a subclass would also bring with it some
@@ -101,7 +100,7 @@ def _get_from_c_api():
                 # I suspect bad things would happen if this were not true.
                 raise TypeError("dictproxy can only proxy to a real dict")
 
-            return PyObj_FromPtr(PyDictProxy_New(d))
+            return PyDictProxy_New(d)
 
     # And slap on a metaclass that fools isinstance() while we're at it.
     return _add_isinstance_tomfoolery(dictproxy)
