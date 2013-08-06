@@ -102,6 +102,11 @@ def _get_from_c_api():
 
             return PyDictProxy_New(d)
 
+    # Try this once to make sure it actually works.  Because PyPy has all the
+    # parts and then crashes when trying to actually use them.
+    # See also: https://bugs.pypy.org/issue1233
+    dictproxy(dict())
+
     # And slap on a metaclass that fools isinstance() while we're at it.
     return _add_isinstance_tomfoolery(dictproxy)
 
