@@ -14,9 +14,8 @@ This module clumsily exposes the same type to previous versions of Python.
 
 .. PEP416_: http://www.python.org/dev/peps/pep-0416/
 
-## Usage
-
-.. codeblock:: python
+Usage
+-----
 
     from dictproxyhack import dictproxy
 
@@ -26,8 +25,6 @@ This module clumsily exposes the same type to previous versions of Python.
 
 Since the proxy holds a reference to the underlying ``dict`` (but doesn't provide
 any way to get it back), you can trivially implement ``frozendict``:
-
-.. codeblock:: python
 
     def frozendict(*args, **kwargs):
         return dictproxy(dict(*args, **kwargs))
