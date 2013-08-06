@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='dictproxyhack',
-    version='1.0',
+    version='1.1',
     description="PEP 417's dictproxy (immutable dicts) for everyone",
     author='Eevee (Alex Munroe)',
     author_email='eevee.pypi@veekun.com',
