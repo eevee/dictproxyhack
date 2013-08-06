@@ -1,5 +1,8 @@
 from distutils.core import setup
 
+with open('README.rst') as f:
+    readme = f.read()
+
 setup(
     name='dictproxyhack',
     version='1.1',
@@ -17,6 +20,7 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
+    long_description=readme,
 
     py_modules=['dictproxyhack'],
 )
