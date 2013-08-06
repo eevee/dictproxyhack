@@ -53,9 +53,9 @@ def _add_isinstance_tomfoolery(cls):
     # oh boy!  This is only a problem when using the super fallback of just
     # writing a class, because it ends up with ABCMeta tacked on.
     try:
-        set = __builtins__.set
-    except NameError:
         from sets import Set as set
+    except NameError:
+        pass
 
     metas = set([type(supercls) for supercls in cls.__mro__])
     metas.discard(type)
